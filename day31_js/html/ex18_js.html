@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> ex18_js.html </title>
+<script defer src="../js/day32.js" type="module" type="text/javascript"></script>
+<script type="text/javascript">
+	
+	/*
+	function myNum() {
+		let z = "30"; // string
+		let x = 100, y = 200;
+		let su = eval(x+y);
+
+		alert(x+","+y+","+su);
+		let num = z;
+		let num2 = eval("2+5");
+		let su2 = eval("x+50");
+		let su3 = 3+5;
+		let su4 = eval(8);
+		alert(num+","+num2+","+su2+","+su3+","+su4);
+
+		let result = su + su2 + su3 + su4;
+		document.getElementById('demo').innerHTML = result;
+
+		let willEval = "";
+		willEval += 'let number = 10; <br/>';
+		willEval += 'alert(number);';
+	}
+
+	let su = 123;
+	console.log(typeof "Hello World!"); // String
+	console.log(typeof su); // number
+	console.log(typeof undefined); // undefined
+	console.log(typeof true); // boolean
+	console.log(typeof null); // object
+	console.log(typeof {}); // object
+	console.log(typeof []); // object
+	
+	function getType(data) {
+		return Object.prototype.toString.call(data).slice(8,-1);
+	}
+	
+	console.log(getType(false));
+	console.log(getType({})); // object Array
+	console.log(getType([])); // object Object
+
+	*/
+
+	/*
+	function myFunction() {
+		window.open("ex18_js.html", "새창", "width=200, height=150");
+	}*/
+	
+	//alert('alert');
+	
+	/*let message = prompt("이름을 입력하시오","default");
+	//confirm('confirm');
+	
+	let plus = eval(message) + 100;
+	console.log(plus);
+	
+	document.write(message);
+	console.log(message);
+	*/
+/*
+	function clickNumber(data) {
+		let monitor = document.getElementById('monitor'); // DOM의 monitor라는 id 값
+		// alert(data);
+		if (data=='clear') {
+			monitor.value = '';
+		} else if (data != '=') {
+			monitor.value += data;
+		} else {
+			monitor.value = eval(monitor.value);
+		}
+	}
+*/
+
+</script>
+</head>
+<body>
+	<div class="box">
+		span tag 동적으로 3개 생성하고, 사자-1,2,3, 이름 텍스트 추가하기
+	</div>
+	<ul>
+		<li>사과</li>
+		<li>사과2</li>
+		<li>사과3</li>
+	</ul>
+	<input type="text" id="monitor"><br>
+	<input type="button" value="1" onclick="clickNumber(this.value)">
+	<input type="button" value="2" onclick="clickNumber(this.value)">
+	<input type="button" value="3" onclick="clickNumber(this.value)">
+	<br>
+	<input type="button" value="4" onclick="clickNumber(this.value)">
+	<input type="button" value="5" onclick="clickNumber(this.value)">
+	<input type="button" value="6" onclick="clickNumber(this.value)">
+	<br>
+	<input type="button" value="7" onclick="clickNumber(this.value)">
+	<input type="button" value="8" onclick="clickNumber(this.value)">
+	<input type="button" value="9" onclick="clickNumber(this.value)">
+	<br>
+	<input type="button" value="+" onclick="clickNumber(this.value)">
+	<input type="button" value="-" onclick="clickNumber(this.value)">
+	<input type="button" value="*" onclick="clickNumber(this.value)">
+	<input type="button" value="/" onclick="clickNumber(this.value)">
+	<br>
+	<input type="button" value="=" onclick="clickNumber(this.value)">
+	<input type="button" value="clear" onclick="clickNumber(this.value)">
+	<hr>
+	브라우저 오픈<br/>
+<button onclick="myNum()">click</button>
+<p id="demo"></p>
+<p><a href="http://www.naver.com">Naver</a></p>
+</body>
+</html>

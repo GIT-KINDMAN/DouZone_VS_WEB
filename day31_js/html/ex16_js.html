@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+<script src="../js/script_2.js" type="text/javascript"></script>
+
+<script type ="text/javascript">
+	window.onload = function() {
+		//alert('change');
+		let header1 = document.getElementById('header1');
+		header1.innerHTML = 'JAVASCRIPT';
+		
+		document.getElementById('header2').innerHTML = "이동훈";
+		
+		let div_tag = document.getElementsByTagName('div');
+		//document.write(div_tag);
+		//div_tag.innerHTML = 'douzone'; // 안됨
+		div_tag[0].innerHTML = 'Hello world';
+		
+		document.getElementsByTagName('p')[2].innerHTML = '234251309587045';
+		document.getElementsByClassName('change')[0].innerHTML = 56456904;
+	}
+</script>
+</head>
+<body>
+
+<h1 id="header1"> Header-1 </h1>
+<h1 id="header2"> Header-1 </h1>
+
+<div> tag name 으로 제어하기  </div>
+<span class="change"> class name으로 제어하기 </span>
+<p> hello
+</body>
+</html>
