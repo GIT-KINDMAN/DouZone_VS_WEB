@@ -1,0 +1,125 @@
+/* main.css */
+@charset "UTF-8";
+
+/* COMMON */
+body {
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.4;
+	color: #333;
+}
+
+img {
+	display: block; 
+	/* 이 문구로 인해 글자 단위가 아니라 블록 단위로 잡히기 때문에 밑이 남는 것 없이 꽉 채워짐 */
+}
+
+a {
+	text-decoration: none; /* 링크의 선이 나오지 않게 하겠다 */
+}
+
+/* Header */
+header {
+	background-color: aqua;
+}
+
+header .inner {
+	width: 1100px;
+	height: 120px;
+	margin: 0 auto;
+	background-color: orange;
+	position: relative;
+	/*
+	position 속성을 통해 문서 상에 요소를 배치하는 방법을 지정한다.
+	top, right, bottom, left 속성을 통해 요소의 최종 위치를 결정한다.
+	사용법은 간단하다.
+	기준을 잡는다. (예- position: relative;)
+	이동시킨다. (예- top: 50px;)
+	*/
+}
+
+header .logo {
+	height: 75px;
+	position: absolute;
+	/*
+	요소를 일반적인 문서 흐름에서 제거한다.
+
+	가장 가까운 위치에 있는 조상 요소를 기준으로 배치한다.
+
+	조상 요소 위치를 기준으로 위쪽(top), 아래쪽(bottom), 왼쪽(left), 오른쪽(right)에서 얼마만큼 떨어질 지 결정한다.
+	조상 중 Position을 가진 요소가 없다면 초기 컨테이닝 블록(<body>요소)를 기준으로 삼는다. (static을 제외한 값)
+	문서 상 원래 위치를 잃어버린다. (아래에 있는 div가 해당 자리를 차지한다)
+	*/
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	display: none;
+}
+
+header .sub-menu {
+	
+}
+header .sub-menu ul.menu {
+	display: flex; /* 길이 지정 필요 없는 inline */
+}
+
+header .sub-menu ul.menu li {
+	position: relative;
+}
+
+header .sub-menu ul.menu li:before { /* 리스트를 넣기 전에 li 태그마다 before를 삽입 */
+	content: "";
+	/* display: block; => position이라는 위치지정이 이미 있어서 굳이 안써도 됨 */
+	width: 1px;
+	height: 14px;
+	background-color: black;
+	position: absolute; /* 다시 공부... 부모 위치가 li? */
+	top: 0;
+	bottom: 0;
+	margin: auto; /* 위아래(top/bottom:0) 공백없이 붙기. 결과값: 세로 중앙 */
+}
+
+
+header .sub-menu ul.menu li:first-child:before { /* 맨 앞 자손 한정 */
+	display: none;
+}
+
+header .sub-menu ul.menu li a {
+	/* background-color: #ff3c00; /* 더 세부적이므로 우선 */
+	font-size: 12px;
+	padding: 11px 16px;
+	display: block;
+	color: #656565;
+}
+
+header .sub-menu ul.menu li a:hover { /* :가상 요소 값 */
+	color: #000; /* 앵커에 hover 시 black */
+}
+
+header .sub-menu .search {
+	background-color: red;
+	height: 34px;
+}
+
+header .sub-menu .search  input { /* 검색 입력창 */
+	width: 36px;
+	height: 34px;
+	padding: 4px 10px;
+	border: 3px solid #ccc;
+	box-sizing: border-box; /* border에 맞춰서 박싱 */
+	border-radius: 5px; /* 테두리 둥글게 */
+	outline: none;
+	background-color: #fff;
+	color: #777; /* 글자 컬러 */
+	transition: width .4s; /* 지정한 지연 시간에 걸쳐 확대대고고 축소됨 */
+}
+
+header .sub-menu .search  input:focus { /* focus(클릭) 하면 초록색으로 커짐 */
+	width: 190px;
+	border-color: #669900;
+}
+
+header .sub-menu .search .material-icons {
+
+}
