@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>ex28_jquery.html</title>
+
+
+<script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>	
+</head>
+<body>
+	<header>
+		<h1>jQuery Sample</h1>
+	</header>
+	
+	<input id="inputdemo" value=" ">
+	<input type="button"  value="변환1"  onclick="document.getElementById('inputdemo').value='화이팅!' ">
+	<input type="button"  value="변환2"  onclick="$('#inputdemo').val('OK!!!') ">
+
+    <div class="welcome"></div>
+	<div class="welcome"></div>
+    <hr>
+
+	<div id="demo">
+		<div class="inner">Create jQuery Test</div>
+	</div>
+
+	<script type="text/javascript">
+        // 1과 2는 같은 의미임
+		// document.getElementsByTagName('h1')[0].style.color = 'red'; // 1
+        // $('h1').css({'color':'blue'}) // 2
+
+        // 1. 체이닝(chain) 방식 // bind는 3.0대부터 deperated
+        /*
+        $('.welcome').html('hello world! DouZone th2!!!')
+                     .css('background-color','yellow')
+                     .on('click mousemove', function() {
+                    // .click( function() { // on 안쓰고 넣을수도 있긴 함
+                         $(this).css('background-color','pink');
+                    });
+        */
+		
+		// function(e){}
+		$('.welcome').html('hello world! DouZone th2!!!')
+		   .css('background-color', 'yellow' )
+		   .on('click', function(e){
+			    let clicked = e.target;
+				console.log(clicked);
+			   $(this).css('background-color', 'red' );
+		   });
+
+	</script>
+</body>
+</html>

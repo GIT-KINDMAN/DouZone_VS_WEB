@@ -11,12 +11,11 @@ body {
 }
 
 img {
-	display: block; 
-	/* 이 문구로 인해 글자 단위가 아니라 블록 단위로 잡히기 때문에 밑이 남는 것 없이 꽉 채워짐 */
+	display: block;
 }
 
 a {
-	text-decoration: none; /* 링크의 선이 나오지 않게 하겠다 */
+	text-decoration: none;
 }
 
 .inner {
@@ -25,215 +24,268 @@ a {
 	position: relative;
 }
 
-/* Header */
+/*BUTTON*/
+.btn {
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: block;
+  transition: .4s;
+}
+.btn:hover {
+  background-color: #333;
+  color: #FFF;
+}
+.btn.btn--reverse {
+  background-color: #333;
+  color: #FFF;
+}
+.btn.btn--reverse:hover {
+  background-color: transparent;
+  color: #333;
+}
+.btn.btn--brown {
+  color: #592B18;
+  border-color: #592B18;
+}
+.btn.btn--brown:hover {
+  color: #FFF;
+  background-color: #592B18;
+}
+.btn.btn--gold {
+  color: #D9AA8A;
+  border-color: #D9AA8A;
+}
+.btn.btn--gold:hover {
+  color: #FFF;
+  background-color: #D9AA8A;
+}
+.btn.btn--white {
+  color: #FFF;
+  border-color: #FFF;
+}
+.btn.btn--white:hover {
+  color: #333;
+  background-color: #FFF;
+}
+
+/*HEADER*/
 header {
-	width: 100%;
-	position: fixed;
-	top: 0;
-	z-index: 9;
-	
-	background-color: #f6f5f0;
-	border-bottom: 1px solid #c8c8c8;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  background-color: #F6F5F0;
+  border-bottom: 1px solid #c8c8c8;
 }
-
-header>.inner {
-	/* 	width: 1100px; */
-	height: 120px;
-	/* 	margin: 0 auto; */
-	/* background-color: orange; */
-	/* position: relative; */
-
-	/*
-	position 속성을 통해 문서 상에 요소를 배치하는 방법을 지정한다.
-	top, right, bottom, left 속성을 통해 요소의 최종 위치를 결정한다.
-	사용법은 간단하다.
-	기준을 잡는다. (예- position: relative;)
-	이동시킨다. (예- top: 50px;)
-	*/
+header > .inner {
+  height: 120px;
 }
-
 header .logo {
-	height: 75px;
-	position: absolute;
-	/*
-	요소를 일반적인 문서 흐름에서 제거한다.
-
-	가장 가까운 위치에 있는 조상 요소를 기준으로 배치한다.
-
-	조상 요소 위치를 기준으로 위쪽(top), 아래쪽(bottom), 왼쪽(left), 오른쪽(right)에서 얼마만큼 떨어질 지 결정한다.
-	조상 중 Position을 가진 요소가 없다면 초기 컨테이닝 블록(<body>요소)를 기준으로 삼는다. (static을 제외한 값)
-	문서 상 원래 위치를 잃어버린다. (아래에 있는 div가 해당 자리를 차지한다)
-	*/
-
-	top: 0;
-	bottom: 0;
-	margin: auto;
-	/* display: none; */
+  height: 75px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
 }
-
 header .sub-menu {
-	position: absolute;
-	top: 10px;
-	right: 0px; /* 위 여백 10px, 오른쪽 정렬 */
-	display: flex;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: flex;
 }
-
 header .sub-menu ul.menu {
-	font-family: Arial, sans-serif; /* Sign in~ 글씨체 바뀜 */
-	display: flex; /* 길이 지정 필요 없는 inline */
+  font-family: Arial, sans-serif;
+  display: flex;
 }
-
 header .sub-menu ul.menu li {
-	position: relative;
+  position: relative;
 }
-
-header .sub-menu ul.menu li::before { /* 리스트를 넣기 전에 li 태그마다 before를 삽입 */
-	content: "";
-	/* display: block; => position이라는 위치지정이 이미 있어서 굳이 안써도 됨 */
-	width: 1px;
-	height: 12px;
-	background-color: #ccc;
-	position: absolute; /* 다시 공부... 부모 위치가 li? */
-	top: 0;
-	bottom: 0;
-	margin: auto; /* 위아래(top/bottom:0) 공백없이 붙기. 결과값: 세로 중앙 */
+header .sub-menu ul.menu li::before {
+  content: "";
+  width: 1px;
+  height: 12px;
+  background-color: #e5e5e5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
-
-header .sub-menu ul.menu li:first-child:before { /* 맨 앞 자손 한정 */
-	display: none;
+header .sub-menu ul.menu li:first-child::before {
+  display: none;
 }
-
 header .sub-menu ul.menu li a {
-	/* background-color: red; */ /* 더 세부적이므로 우선 */
-	font-size: 12px;
-	padding: 11px 16px;
-	display: block;
-	color: #656565;
+  padding: 11px 16px;
+  display: block;
+  font-size: 13px;
+  color: #656565;
 }
-
-header .sub-menu ul.menu li a:hover { /* :가상 요소 값 */
-	color: #000; /* 앵커에 hover 시 black */
+header .sub-menu ul.menu li a:hover {
+  color: #000;
 }
-
 header .sub-menu .search {
-	/* background-color: red; */
-	height: 34px;
-	position: relative;
+  position: relative;
+  height: 34px;
 }
-
-header .sub-menu .search  input { /* 검색 입력창 */
-	width: 36px;
-	height: 34px;
-	padding: 4px 10px;
-	border: 1px solid #ccc;
-	box-sizing: border-box; /* border에 맞춰서 박싱 */
-	border-radius: 5px; /* 테두리 둥글게 */
-	outline: none;
-	background-color: #fff;
-	color: #777; /* 글자 컬러 */
-	transition: width .4s; /* 지정한 지연 시간에 걸쳐 확대되고 축소됨 */
+header .sub-menu .search input {
+  width: 36px;
+  height: inherit;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+  background-color: #fff;
+  color: #777;
+  font-size: 12px;
+  transition: width .4s;
 }
-
-header .sub-menu .search  input:focus {
-	width: 190px;
-	border-color: #669900;
+header .sub-menu .search input:focus {
+  width: 190px;
+  border-color: #669900;
 }
-
 header .sub-menu .search .material-icons {
-	height: 24px;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 5px;
-	margin: auto;
-	transition: .4s;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  margin: auto;
+  transition: .4s;
 }
-
 header .sub-menu .search.focused .material-icons {
-	opacity: 0;
+  opacity: 0;
 }
-
 header .main-menu {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	z-index: 1;
-	display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
 }
-
-header .main-menu .item {
-	
-}
-
 header .main-menu .item .item__name {
-	padding: 10px 20px 34px 20px;
-	font-family: Arial, sans-serif;
-	font-size: 13px;
+  padding: 10px 20px 34px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
 }
-
 header .main-menu .item:hover .item__name {
-	background-color: #2c2a29;
-	color: #669900;
-	border-radius: 6px 6px 0 0;
+  background-color: #2C2A29;
+  color: #669900;
+  border-radius: 6px 6px 0 0;
 }
-
 header .main-menu .item .item__contents {
-	width: 100%;
-	position: fixed;
-	left: 0;
-	display: none;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  display: none;
 }
-
 header .main-menu .item:hover .item__contents {
-	display: block;
+  display: block;
 }
-
 header .main-menu .item .item__contents .contents__menu {
-	background-color: pink;
-	height: 200px;
+  background-color: #2C2A29;
 }
-
-header .main-menu .item .item__contents .contents__menu>ul {
-	display: flex;
-	padding: 20px 0;
+header .main-menu .item .item__contents .contents__menu > ul {
+  padding: 20px 0;
+  display: flex;
 }
-
-header .main-menu .item .item__contents .contents__menu>ul>li {
-	width: 220px;
+header .main-menu .item .item__contents .contents__menu > ul > li {
+  width: 220px;
 }
-
-header .main-menu .item .item__contents .contents__menu>ul>li h4 {
-	padding: 3px 0 12px 0;
-	font-size: 14px;
-	color: #fff;
+header .main-menu .item .item__contents .contents__menu > ul > li h4 {
+  padding: 3px 0 12px 0;
+  font-size: 14px;
+  color: #fff;
 }
-
-header .main-menu .item .item__contents .contents__menu>ul>li ul {
-	
+header .main-menu .item .item__contents .contents__menu > ul > li ul li {
+  padding: 5px 0;
+  font-size: 12px;
+  color: #999;
+  cursor: pointer;
 }
-
-header .main-menu .item .item__contents .contents__menu>ul>li ul li {
-	padding: 5px 0;
-	font-size: 12px;
-	color: #9999;
-	cursor: pointer;
+header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
+  color: #669900;
 }
-
 header .main-menu .item .item__contents .contents__texture {
-	/* background-color: orange;
-	height: 100px; */
-	padding: 26px 0;
-	font-size: 12px;
-	background-image: url("../images/main_menu_pattern.jpg");
+  padding: 26px 0;
+  font-size: 12px;
+  background-image: url("../images/main_menu_pattern.jpg");
 }
-
 header .main-menu .item .item__contents .contents__texture h4 {
-	color: #999;
-	font-weight: 700;
-	font-size: 12px;
+  color: #999;
+  font-weight: 900;
+}
+header .main-menu .item .item__contents .contents__texture p {
+  color: #64a70b;
+  margin: 4px 0 14px;
+}
+/*BADGES*/
+header .badges {
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+header .badges .badge {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,.15);
+  cursor: pointer;
 }
 
-header .main-menu .item .item__contents .contents__texture p {
-	color: #669900;
-	margin: 4px 0 14px;
+
+/*VISUAL*/
+.visual {
+  margin-top: 120px;
+  background-image: url("../images/visual_bg.jpg");
+  background-position: center;
+}
+.visual .inner {
+  height: 646px;
+}
+.visual .title {
+  position: absolute;
+  top: 88px;
+  left: -10px;
+}
+.visual .title .btn {
+  position: absolute;
+  top: 259px;
+  left: 173px;
+}
+.visual .cup1.image {
+  position: absolute;
+  bottom: 0;
+  right: -47px;
+}
+.visual .cup1.text {
+  position: absolute;
+  top: 38px;
+  right: 171px;
+}
+.visual .cup2.image {
+  position: absolute;
+  bottom: 0;
+  right: 162px;
+}
+.visual .cup2.text {
+  position: absolute;
+  top: 321px;
+  right: 416px;
+}
+.visual .spoon {
+  position: absolute;
+  bottom: 0;
+  left: 275px;
+}
+.visual .fade-in {
+  opacity: 0;
 }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark-송파교육장</title>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAymPslj6q9BslJXHoIwpEZr0bBQ9UA0os&callback=initMap"></script>
+</head>
+
+<body>
+    <script>
+
+        // Initialize and add the map
+        function initMap() {
+            // The location of seoul
+            const seoul = { lat: 37.4951099414934, lng: 127.12266116071869 };
+            // The map, centered at seoul
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: seoul,
+            });
+            // The marker, positioned at seoul
+            const marker = new google.maps.Marker({
+                position: seoul,
+                map: map,
+            });
+        }
+
+    </script>
+    <div id="map" style="width:500px;height:380px;"></div>
+</body>
+</html>
